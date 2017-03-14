@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="app_name">BMI Calculator</string>
+    <string name="impressum">Impressum</string>
+    <string name="author">Jonas Schubert\nGuepardoApps</string>
+    <string name="email">guepardoapps@gmail.com</string>
+    <string name="githubLink">https://github.com/Gu3pardo/GuepardoBMICalculator/</string>
+    <string name="contentDescription">This is an image</string>
+</resources>
