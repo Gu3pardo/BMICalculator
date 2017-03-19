@@ -1,4 +1,4 @@
-package guepardoapps.bmicalculator.common;
+package guepardoapps.medical.bmicalculator.common.enums;
 
 import java.io.Serializable;
 

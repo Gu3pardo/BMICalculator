@@ -1,10 +1,8 @@
-package guepardoapps.bmicalculator.views.controller;
+package guepardoapps.medical.bmicalculator.views.controller;
 
 import android.content.Context;
-
-import guepardoapps.bmicalculator.common.Enables;
-import guepardoapps.bmicalculator.views.Main;
-
+import guepardoapps.medical.bmicalculator.common.Enables;
+import guepardoapps.medical.bmicalculator.views.Main;
 import guepardoapps.toolset.common.Logger;
 import guepardoapps.toolset.controller.NavigationController;
 

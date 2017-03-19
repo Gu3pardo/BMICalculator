@@ -1,4 +1,4 @@
-package guepardoapps.bmicalculator.views;
+package guepardoapps.medical.bmicalculator.views;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,9 +7,9 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 
-import guepardoapps.bmicalculator.R;
-import guepardoapps.bmicalculator.common.*;
-import guepardoapps.bmicalculator.views.controller.ImpressumController;
+import guepardoapps.medical.bmicalculator.R;
+import guepardoapps.medical.bmicalculator.common.*;
+import guepardoapps.medical.bmicalculator.views.controller.ImpressumController;
 
 import guepardoapps.toolset.common.Logger;
 

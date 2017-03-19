@@ -1,4 +1,4 @@
-package guepardoapps.bmicalculator.common;
+package guepardoapps.medical.bmicalculator.common;
 
 public class DatabaseConstants {
 	public static final String DATABASE_NAME = "BMIdb";

@@ -1,4 +1,4 @@
-package guepardoapps.bmicalculator.database;
+package guepardoapps.medical.bmicalculator.database;
 
 import java.util.ArrayList;
 
@@ -8,9 +8,8 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import guepardoapps.bmicalculator.common.DatabaseConstants;
-import guepardoapps.bmicalculator.common.dto.BMIDto;
+import guepardoapps.medical.bmicalculator.common.DatabaseConstants;
+import guepardoapps.medical.bmicalculator.common.dto.BMIDto;
 
 public class Database {
 

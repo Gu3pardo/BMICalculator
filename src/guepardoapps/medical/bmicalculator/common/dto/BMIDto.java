@@ -1,4 +1,4 @@
-package guepardoapps.bmicalculator.common.dto;
+package guepardoapps.medical.bmicalculator.common.dto;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package guepardoapps.bmicalculator.views;
+package guepardoapps.medical.bmicalculator.views;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,15 +6,15 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 
-import guepardoapps.bmicalculator.R;
-import guepardoapps.bmicalculator.common.*;
-import guepardoapps.bmicalculator.views.controller.BootController;
+import guepardoapps.medical.bmicalculator.R;
+import guepardoapps.medical.bmicalculator.common.*;
+import guepardoapps.medical.bmicalculator.views.controller.BootController;
 
 import guepardoapps.toolset.common.Logger;
 
 public class Boot extends Activity {
 
-	private static final String TAG = Boot.class.getName();
+	private static final String TAG = Boot.class.getSimpleName();
 	private Logger _logger;
 
 	private Context _context;

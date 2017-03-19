@@ -1,4 +1,4 @@
-package guepardoapps.bmicalculator.views.controller;
+package guepardoapps.medical.bmicalculator.views.controller;
 
 import java.util.ArrayList;
 
@@ -19,15 +19,14 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import es.dmoral.toasty.Toasty;
+import guepardoapps.library.toastview.ToastView;
 
-import guepardoapps.bmicalculator.R;
-import guepardoapps.bmicalculator.common.BMILevel;
-import guepardoapps.bmicalculator.common.Enables;
-import guepardoapps.bmicalculator.common.dto.BMIDto;
-import guepardoapps.bmicalculator.database.controller.DatabaseController;
-import guepardoapps.bmicalculator.views.Impressum;
-
+import guepardoapps.medical.bmicalculator.R;
+import guepardoapps.medical.bmicalculator.common.Enables;
+import guepardoapps.medical.bmicalculator.common.dto.BMIDto;
+import guepardoapps.medical.bmicalculator.common.enums.BMILevel;
+import guepardoapps.medical.bmicalculator.database.controller.DatabaseController;
+import guepardoapps.medical.bmicalculator.views.Impressum;
 import guepardoapps.toolset.common.Logger;
 import guepardoapps.toolset.controller.DialogController;
 import guepardoapps.toolset.controller.NavigationController;
@@ -104,12 +103,12 @@ public class MainController {
 				String enteredWeightString = _inputFieldWeight.getText().toString();
 				if (enteredWeightString == null) {
 					_logger.Error("enteredWeightString is null!");
-					Toasty.error(_context, "Please enter a weight!", Toast.LENGTH_LONG).show();
+					ToastView.error(_context, "Please enter a weight!", Toast.LENGTH_LONG).show();
 					return;
 				}
 				if (enteredWeightString.length() == 0) {
 					_logger.Error("enteredWeightString has length 0!");
-					Toasty.error(_context, "Please enter a weight!", Toast.LENGTH_LONG).show();
+					ToastView.error(_context, "Please enter a weight!", Toast.LENGTH_LONG).show();
 					return;
 				}
 				_logger.Debug(String.format("Entered weight is %s", enteredWeightString));
@@ -119,7 +118,7 @@ public class MainController {
 					enteredWeight = Double.parseDouble(enteredWeightString);
 				} catch (Exception ex) {
 					_logger.Error(ex.toString());
-					Toasty.error(_context, "Something went wrong parsing the weight!", Toast.LENGTH_LONG).show();
+					ToastView.error(_context, "Something went wrong parsing the weight!", Toast.LENGTH_LONG).show();
 					return;
 				}
 				_logger.Debug(String.format("Parsed weight is %s", enteredWeight));
@@ -127,12 +126,12 @@ public class MainController {
 				String enteredHeightString = _inputFieldHeight.getText().toString();
 				if (enteredHeightString == null) {
 					_logger.Error("enteredHeightString is null!");
-					Toasty.error(_context, "Please enter a height!", Toast.LENGTH_LONG).show();
+					ToastView.error(_context, "Please enter a height!", Toast.LENGTH_LONG).show();
 					return;
 				}
 				if (enteredHeightString.length() == 0) {
 					_logger.Error("enteredHeightString has length 0!");
-					Toasty.error(_context, "Please enter a height!", Toast.LENGTH_LONG).show();
+					ToastView.error(_context, "Please enter a height!", Toast.LENGTH_LONG).show();
 					return;
 				}
 				_logger.Debug(String.format("Entered height is %s", enteredHeightString));
@@ -143,7 +142,7 @@ public class MainController {
 					enteredHeight /= 100;
 				} catch (Exception ex) {
 					_logger.Error(ex.toString());
-					Toasty.error(_context, "Something went wrong parsing the height!", Toast.LENGTH_LONG).show();
+					ToastView.error(_context, "Something went wrong parsing the height!", Toast.LENGTH_LONG).show();
 					return;
 				}
 				_logger.Debug(String.format("Parsed height is %s", enteredHeight));
@@ -171,12 +170,12 @@ public class MainController {
 				String bmiString = _resultTextView.getText().toString();
 				if (bmiString == null) {
 					_logger.Error("bmiString is null!");
-					Toasty.error(_context, "Could not save data!", Toast.LENGTH_LONG).show();
+					ToastView.error(_context, "Could not save data!", Toast.LENGTH_LONG).show();
 					return;
 				}
 				if (bmiString.length() == 0) {
 					_logger.Error("bmiString has length 0!");
-					Toasty.error(_context, "Could not save data!", Toast.LENGTH_LONG).show();
+					ToastView.error(_context, "Could not save data!", Toast.LENGTH_LONG).show();
 					return;
 				}
 				_logger.Debug(String.format("bmiString is %s", bmiString));
@@ -186,7 +185,7 @@ public class MainController {
 					bmi = Double.parseDouble(bmiString);
 				} catch (Exception ex) {
 					_logger.Error(ex.toString());
-					Toasty.error(_context, "Something went wrong parsing bmi!", Toast.LENGTH_LONG).show();
+					ToastView.error(_context, "Something went wrong parsing bmi!", Toast.LENGTH_LONG).show();
 					return;
 				}
 				_logger.Debug(String.format("Parsed bmi is %s", bmi));
