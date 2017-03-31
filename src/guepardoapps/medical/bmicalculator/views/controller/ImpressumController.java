@@ -4,12 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
+import guepardoapps.library.toolset.common.Logger;
+import guepardoapps.library.toolset.controller.MailController;
+import guepardoapps.library.toolset.controller.NavigationController;
+
 import guepardoapps.medical.bmicalculator.R;
 import guepardoapps.medical.bmicalculator.common.Enables;
 import guepardoapps.medical.bmicalculator.views.Main;
-import guepardoapps.toolset.common.Logger;
-import guepardoapps.toolset.controller.MailController;
-import guepardoapps.toolset.controller.NavigationController;
 
 public class ImpressumController {
 

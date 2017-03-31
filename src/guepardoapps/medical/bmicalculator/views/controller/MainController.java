@@ -21,15 +21,16 @@ import android.widget.Toast;
 
 import guepardoapps.library.toastview.ToastView;
 
+import guepardoapps.library.toolset.common.Logger;
+import guepardoapps.library.toolset.controller.DialogController;
+import guepardoapps.library.toolset.controller.NavigationController;
+
 import guepardoapps.medical.bmicalculator.R;
 import guepardoapps.medical.bmicalculator.common.Enables;
 import guepardoapps.medical.bmicalculator.common.dto.BMIDto;
 import guepardoapps.medical.bmicalculator.common.enums.BMILevel;
 import guepardoapps.medical.bmicalculator.database.controller.DatabaseController;
 import guepardoapps.medical.bmicalculator.views.Impressum;
-import guepardoapps.toolset.common.Logger;
-import guepardoapps.toolset.controller.DialogController;
-import guepardoapps.toolset.controller.NavigationController;
 
 public class MainController {
 
@@ -83,7 +84,10 @@ public class MainController {
 		_logger.Debug("onCreate");
 
 		_context = context;
-		_databaseController = new DatabaseController(_context);
+
+		_databaseController = DatabaseController.getInstance();
+		_databaseController.Initialize(_context);
+
 		_dialogController = new DialogController(_context, ContextCompat.getColor(_context, R.color.TextIcon),
 				ContextCompat.getColor(_context, R.color.Primary));
 		_navigationController = new NavigationController(_context);
@@ -221,14 +225,17 @@ public class MainController {
 
 	public void onPause() {
 		_logger.Debug("onPause");
+		_databaseController.Dispose();
 	}
 
 	public void onResume() {
 		_logger.Debug("onResume");
+		_databaseController.Initialize(_context);
 	}
 
 	public void onDestroy() {
 		_logger.Debug("onDestroy");
+		_databaseController.Dispose();
 	}
 
 	public void NavigateToImpressum() {

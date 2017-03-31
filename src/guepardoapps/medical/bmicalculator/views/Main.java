@@ -6,11 +6,11 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 
+import guepardoapps.library.toolset.common.Logger;
+
 import guepardoapps.medical.bmicalculator.R;
 import guepardoapps.medical.bmicalculator.common.*;
 import guepardoapps.medical.bmicalculator.views.controller.MainController;
-
-import guepardoapps.toolset.common.Logger;
 
 public class Main extends Activity {
 
@@ -43,14 +43,14 @@ public class Main extends Activity {
 	}
 
 	@Override
-	public void onPause() {
+	protected void onPause() {
 		super.onPause();
 		_logger.Debug("onPause");
 		_mainController.onPause();
 	}
 
 	@Override
-	public void onDestroy() {
+	protected void onDestroy() {
 		super.onDestroy();
 		_logger.Debug("onDestroy");
 		_mainController.onDestroy();

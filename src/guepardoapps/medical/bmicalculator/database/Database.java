@@ -8,10 +8,17 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import guepardoapps.library.toolset.common.Logger;
+
 import guepardoapps.medical.bmicalculator.common.DatabaseConstants;
+import guepardoapps.medical.bmicalculator.common.Enables;
 import guepardoapps.medical.bmicalculator.common.dto.BMIDto;
 
 public class Database {
+
+	private static final String TAG = Database.class.getSimpleName();
+	private Logger _logger;
 
 	public static final String KEY_ROWID = DatabaseConstants.DATABASE_KEY_ROWID;
 	public static final String KEY_BMI = DatabaseConstants.DATABASE_KEY_BMI;
@@ -49,6 +56,7 @@ public class Database {
 
 	public Database(Context context) {
 		_context = context;
+		_logger = new Logger(TAG, Enables.DEBUGGING);
 	}
 
 	public Database Open() throws SQLException {
@@ -85,13 +93,15 @@ public class Database {
 			try {
 				bmi = Double.parseDouble(bmiString);
 			} catch (Exception ex) {
-				// TODO
+				_logger.Error(ex.toString());
 			}
 
 			BMIDto newEntry = new BMIDto(id, bmi);
 
 			result.add(newEntry);
 		}
+
+		cursor.close();
 
 		return result;
 	}

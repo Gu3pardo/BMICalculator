@@ -6,11 +6,11 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 
+import guepardoapps.library.toolset.common.Logger;
+
 import guepardoapps.medical.bmicalculator.R;
 import guepardoapps.medical.bmicalculator.common.*;
 import guepardoapps.medical.bmicalculator.views.controller.BootController;
-
-import guepardoapps.toolset.common.Logger;
 
 public class Boot extends Activity {
 
@@ -36,6 +36,7 @@ public class Boot extends Activity {
 		_bootController.NavigateToMain();
 	}
 
+	@Override
 	protected void onResume() {
 		super.onResume();
 		_logger.Debug("onResume");
@@ -43,14 +44,14 @@ public class Boot extends Activity {
 	}
 
 	@Override
-	public void onPause() {
+	protected void onPause() {
 		super.onPause();
 		_logger.Debug("onPause");
 		_bootController.onPause();
 	}
 
 	@Override
-	public void onDestroy() {
+	protected void onDestroy() {
 		super.onDestroy();
 		_logger.Debug("onDestroy");
 		_bootController.onDestroy();

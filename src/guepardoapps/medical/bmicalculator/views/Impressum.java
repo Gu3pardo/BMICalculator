@@ -7,11 +7,11 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 
+import guepardoapps.library.toolset.common.Logger;
+
 import guepardoapps.medical.bmicalculator.R;
 import guepardoapps.medical.bmicalculator.common.*;
 import guepardoapps.medical.bmicalculator.views.controller.ImpressumController;
-
-import guepardoapps.toolset.common.Logger;
 
 public class Impressum extends Activity {
 
@@ -44,14 +44,14 @@ public class Impressum extends Activity {
 	}
 
 	@Override
-	public void onPause() {
+	protected void onPause() {
 		super.onPause();
 		_logger.Debug("onPause");
 		_impressumController.onPause();
 	}
 
 	@Override
-	public void onDestroy() {
+	protected void onDestroy() {
 		super.onDestroy();
 		_logger.Debug("onDestroy");
 		_impressumController.onDestroy();
