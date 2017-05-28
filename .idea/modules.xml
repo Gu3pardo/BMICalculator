@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BMICalculator.iml" filepath="$PROJECT_DIR$/BMICalculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Toolset/lib_toolset/lib_toolset.iml" filepath="$PROJECT_DIR$/../Toolset/lib_toolset/lib_toolset.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/TextIcon">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/relativeLayoutButtonBar"
+        android:layout_margin="10dp"
+        android:background="@color/Primary"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <com.jjoe64.graphview.GraphView
+            android:id="@+id/bmiGraph"
+            android:layout_width="match_parent"
+            android:layout_height="200dip"
+            android:layout_margin="5dp" />
+
+        <ImageButton
+            android:id="@+id/imageButtonInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/bmiGraph"
+            android:layout_margin="3dp"
+            android:background="@xml/button_blank_white"
+            android:contentDescription="@string/contentDescription"
+            android:src="@android:drawable/ic_menu_add" />
+
+        <ImageButton
+            android:id="@+id/imageButtonDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/bmiGraph"
+            android:layout_margin="3dp"
+            android:background="@xml/button_blank_white"
+            android:contentDescription="@string/contentDescription"
+            android:src="@android:drawable/ic_menu_delete" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutButtonBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/Primary"
+        android:padding="2dp">
+
+        <Button
+            android:id="@+id/buttonVersionInformation"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="3dp"
+            android:background="@xml/button_blank_white"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            android:text="@string/versionExample"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/TextIcon" />
+    </RelativeLayout>
+
+</RelativeLayout>

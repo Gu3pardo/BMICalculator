@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">BMI Calculator</string>
+
+    <string name="about">About</string>
+    <string name="author">Jonas Schubert\nGuepardoApps</string>
+    <string name="email">guepardoapps@gmail.com</string>
+
+    <string name="gitHubLink">https://github.com/Gu3pardo/BMICalculator/</string>
+    <string name="payPalLink">https://www.paypal.me/GuepardoApps/</string>
+
+    <string name="contentDescription">This is an image</string>
+
+    <string name="enterWeight">Enter your weight in kg</string>
+    <string name="enterHeight">Enter your height in cm</string>
+
+    <string name="calculate">Calculate</string>
+
+    <string name="versionExample">v0.1.2.3.456789</string>
+</resources>
