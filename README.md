@@ -5,6 +5,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 <a target="_blank" href="https://www.paypal.me/GuepardoApps" title="Donate using PayPal"><img src="https://img.shields.io/badge/paypal-donate-blue.svg" /></a>
 
+[![Build](https://img.shields.io/badge/build-success-green.svg)](https://github.com/Gu3pardo/BMICalculator/blob/master/builds)
+[![Version](https://img.shields.io/badge/version-v1.0.0.170609-blue.svg)](https://github.com/Gu3pardo/BMICalculator/blob/master/builds)
+
 Android application for calculating your bmi, saving it and displaying a graph of your progress
 
 # Screenshots
