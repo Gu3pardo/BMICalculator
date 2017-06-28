@@ -10,10 +10,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.NonNull;
 
-import guepardoapps.library.toolset.common.Logger;
-
-import guepardoapps.bmicalculator.common.Enables;
+import guepardoapps.bmicalculator.common.constants.Enables;
 import guepardoapps.bmicalculator.common.dto.BMIDto;
+import guepardoapps.bmicalculator.common.tools.Logger;
 
 public class Database {
 

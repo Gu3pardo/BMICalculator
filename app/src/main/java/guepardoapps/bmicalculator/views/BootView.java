@@ -4,10 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import guepardoapps.bmicalculator.R;
-import guepardoapps.bmicalculator.common.Enables;
-import guepardoapps.bmicalculator.controller.BootViewController;
-
-import guepardoapps.library.toolset.common.Logger;
+import guepardoapps.bmicalculator.common.constants.Enables;
+import guepardoapps.bmicalculator.common.tools.Logger;
+import guepardoapps.bmicalculator.views.controller.BootViewController;
 
 public class BootView extends Activity {
 

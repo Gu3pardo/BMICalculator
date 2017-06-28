@@ -1,12 +1,11 @@
-package guepardoapps.bmicalculator.controller;
+package guepardoapps.bmicalculator.views.controller;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import guepardoapps.library.toolset.common.Logger;
-import guepardoapps.library.toolset.controller.NavigationController;
-
-import guepardoapps.bmicalculator.common.Enables;
+import guepardoapps.bmicalculator.common.constants.Enables;
+import guepardoapps.bmicalculator.common.controller.NavigationController;
+import guepardoapps.bmicalculator.common.tools.Logger;
 import guepardoapps.bmicalculator.views.InputView;
 
 public class BootViewController {

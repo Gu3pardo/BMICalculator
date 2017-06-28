@@ -1,14 +1,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/TextIcon">
+    android:background="@color/colorTextIcon">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/relativeLayoutButtonBar"
         android:layout_margin="10dp"
-        android:background="@color/Primary"
+        android:background="@color/colorPrimary"
         android:orientation="vertical"
         android:padding="5dp">
 
@@ -19,7 +19,7 @@
             android:labelFor="@+id/inputFieldWeight"
             android:text="@string/enterWeight"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/TextIcon"
+            android:textColor="@color/colorTextIcon"
             android:textStyle="bold" />
 
         <EditText
@@ -29,7 +29,7 @@
             android:layout_margin="3dp"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:textColor="@color/TextIcon">
+            android:textColor="@color/colorTextIcon">
 
             <requestFocus />
         </EditText>
@@ -41,7 +41,7 @@
             android:labelFor="@+id/inputFieldHeight"
             android:text="@string/enterHeight"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/TextIcon"
+            android:textColor="@color/colorTextIcon"
             android:textStyle="bold" />
 
         <EditText
@@ -51,7 +51,7 @@
             android:layout_margin="3dp"
             android:ems="10"
             android:inputType="numberDecimal"
-            android:textColor="@color/TextIcon" />
+            android:textColor="@color/colorTextIcon" />
 
         <Button
             android:id="@+id/buttonCalculate"
@@ -62,7 +62,7 @@
             android:background="@xml/button_blank_white"
             android:padding="5dp"
             android:text="@string/calculate"
-            android:textColor="@color/TextIcon"
+            android:textColor="@color/colorTextIcon"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -83,7 +83,7 @@
                     android:gravity="center"
                     android:padding="5dp"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/TextIcon"
+                    android:textColor="@color/colorTextIcon"
                     android:textStyle="bold" />
 
                 <TextView
@@ -94,7 +94,7 @@
                     android:gravity="center"
                     android:padding="5dp"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="@color/TextIcon"
+                    android:textColor="@color/colorTextIcon"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -142,7 +142,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/Primary"
+        android:background="@color/colorPrimary"
         android:padding="2dp">
 
         <Button
@@ -157,7 +157,7 @@
             android:paddingStart="5dp"
             android:text="@string/versionExample"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="@color/TextIcon" />
+            android:textColor="@color/colorTextIcon" />
     </RelativeLayout>
 
 </RelativeLayout>

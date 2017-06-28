@@ -5,11 +5,9 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 
 import guepardoapps.bmicalculator.R;
-import guepardoapps.bmicalculator.common.Enables;
-import guepardoapps.bmicalculator.controller.GraphViewController;
-
-import guepardoapps.library.toolset.common.Logger;
-import guepardoapps.library.toolset.controller.NavigationController;
+import guepardoapps.bmicalculator.common.constants.Enables;
+import guepardoapps.bmicalculator.common.tools.Logger;
+import guepardoapps.bmicalculator.views.controller.GraphViewController;
 
 public class GraphView extends Activity {
 
@@ -17,7 +15,6 @@ public class GraphView extends Activity {
     private Logger _logger;
 
     private GraphViewController _graphViewController;
-    private NavigationController _navigationController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +26,6 @@ public class GraphView extends Activity {
 
         _graphViewController = new GraphViewController();
         _graphViewController.onCreate(this);
-        _navigationController = new NavigationController(this);
     }
 
     @Override
@@ -56,12 +52,7 @@ public class GraphView extends Activity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         _logger.Debug(String.format("onKeyDown: keyCode: %s | event: %s", keyCode, event));
-
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            _navigationController.NavigateTo(InputView.class, true);
-            return true;
-        }
-
+        _graphViewController.onKeyDown(keyCode);
         return super.onKeyDown(keyCode, event);
     }
 }

@@ -7,8 +7,6 @@ public class BMIDto implements Serializable {
 
     private static final String TAG = BMIDto.class.getSimpleName();
 
-    private static final long serialVersionUID = -7534468426192095681L;
-
     private int _id;
     private double _value;
 

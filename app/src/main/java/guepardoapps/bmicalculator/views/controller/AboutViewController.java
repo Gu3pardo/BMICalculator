@@ -1,15 +1,17 @@
-package guepardoapps.bmicalculator.controller;
+package guepardoapps.bmicalculator.views.controller;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
-
-import guepardoapps.library.toolset.common.Logger;
-import guepardoapps.library.toolset.controller.MailController;
+import android.view.KeyEvent;
 
 import guepardoapps.bmicalculator.R;
-import guepardoapps.bmicalculator.common.Enables;
+import guepardoapps.bmicalculator.common.constants.Enables;
+import guepardoapps.bmicalculator.common.controller.MailController;
+import guepardoapps.bmicalculator.common.controller.NavigationController;
+import guepardoapps.bmicalculator.common.tools.Logger;
+import guepardoapps.bmicalculator.views.InputView;
 
 public class AboutViewController {
 
@@ -18,6 +20,7 @@ public class AboutViewController {
 
     private Context _context;
     private MailController _mailController;
+    private NavigationController _navigationController;
 
     public AboutViewController() {
         _logger = new Logger(TAG, Enables.LOGGING);
@@ -27,6 +30,7 @@ public class AboutViewController {
         _logger.Debug("onCreate");
         _context = context;
         _mailController = new MailController(_context);
+        _navigationController = new NavigationController(_context);
     }
 
     public void onPause() {
@@ -39,6 +43,12 @@ public class AboutViewController {
 
     public void onDestroy() {
         _logger.Debug("onDestroy");
+    }
+
+    public void onKeyDown(int keyCode) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            _navigationController.NavigateTo(InputView.class, true);
+        }
     }
 
     public void GoToGitHub() {

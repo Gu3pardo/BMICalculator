@@ -1,4 +1,4 @@
-package guepardoapps.bmicalculator.controller;
+package guepardoapps.bmicalculator.views.controller;
 
 import java.util.Locale;
 
@@ -18,13 +18,12 @@ import android.widget.Toast;
 import es.dmoral.toasty.Toasty;
 
 import guepardoapps.bmicalculator.R;
-import guepardoapps.bmicalculator.common.Enables;
+import guepardoapps.bmicalculator.common.constants.Enables;
+import guepardoapps.bmicalculator.common.controller.NavigationController;
 import guepardoapps.bmicalculator.common.enums.BMILevel;
+import guepardoapps.bmicalculator.common.tools.Logger;
 import guepardoapps.bmicalculator.views.AboutView;
 import guepardoapps.bmicalculator.views.GraphView;
-
-import guepardoapps.library.toolset.common.Logger;
-import guepardoapps.library.toolset.controller.NavigationController;
 
 public class InputViewController {
 
@@ -57,23 +56,23 @@ public class InputViewController {
 
         _navigationController = new NavigationController(_context);
 
-        _inputFieldWeight = (EditText) ((Activity) _context).findViewById(R.id.inputFieldWeight);
-        _inputFieldHeight = (EditText) ((Activity) _context).findViewById(R.id.inputFieldHeight);
+        _inputFieldWeight = ((Activity) _context).findViewById(R.id.inputFieldWeight);
+        _inputFieldHeight = ((Activity) _context).findViewById(R.id.inputFieldHeight);
 
-        _resultTextView = (TextView) ((Activity) _context).findViewById(R.id.bmiResult);
-        _resultDescriptionTextView = (TextView) ((Activity) _context).findViewById(R.id.bmiResultDescription);
+        _resultTextView = ((Activity) _context).findViewById(R.id.bmiResult);
+        _resultDescriptionTextView = ((Activity) _context).findViewById(R.id.bmiResultDescription);
 
-        _buttonSave = (ImageButton) ((Activity) _context).findViewById(R.id.imageButtonSave);
+        _buttonSave = ((Activity) _context).findViewById(R.id.imageButtonSave);
         _buttonSave.setOnClickListener(view -> saveValue());
         _buttonSave.setVisibility(View.INVISIBLE);
         _buttonSave.setEnabled(false);
 
-        _buttonShare = (ImageButton) ((Activity) _context).findViewById(R.id.imageButtonShare);
+        _buttonShare = ((Activity) _context).findViewById(R.id.imageButtonShare);
         _buttonShare.setOnClickListener(view -> shareValue());
         _buttonShare.setVisibility(View.INVISIBLE);
         _buttonShare.setEnabled(false);
 
-        Button buttonCalculate = (Button) ((Activity) _context).findViewById(R.id.buttonCalculate);
+        Button buttonCalculate = ((Activity) _context).findViewById(R.id.buttonCalculate);
         buttonCalculate.setOnClickListener(view -> calculateBMI());
 
         initializeNavigationButtons();
@@ -168,7 +167,7 @@ public class InputViewController {
     private void initializeNavigationButtons() {
         _logger.Debug("initializeNavigationButtons");
 
-        ImageButton buttonGraph = (ImageButton) ((Activity) _context).findViewById(R.id.imageButtonGraph);
+        ImageButton buttonGraph = ((Activity) _context).findViewById(R.id.imageButtonGraph);
         buttonGraph.setOnClickListener(view -> _navigationController.NavigateTo(GraphView.class, true));
     }
 
@@ -243,7 +242,7 @@ public class InputViewController {
             version = "Error loading version...";
         }
 
-        Button buttonVersionInformation = (Button) ((Activity) _context).findViewById(R.id.buttonVersionInformation);
+        Button buttonVersionInformation = ((Activity) _context).findViewById(R.id.buttonVersionInformation);
         buttonVersionInformation.setText(version);
         buttonVersionInformation.setOnClickListener(view -> _navigationController.NavigateTo(AboutView.class, true));
     }

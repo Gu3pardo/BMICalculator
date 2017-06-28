@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "guepardoapps.bmicalculator"
         minSdkVersion 21
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 10000
-        versionName "1.0.0.170609"
+        versionName "1.0.0.170628"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         jackOptions {
@@ -40,12 +40,11 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    compile 'com.android.support:design:26+'
     compile 'com.android.support:multidex:1.0.1'
-    compile 'com.android.support:support-compat:25.3.1'
+    compile 'com.android.support:support-compat:26+'
     compile 'com.github.GrenderG:Toasty:1.2.5'
     compile 'com.jjoe64:graphview:4.2.1'
     testCompile 'junit:junit:4.12'
-    compile project(':lib_toolset')
 }

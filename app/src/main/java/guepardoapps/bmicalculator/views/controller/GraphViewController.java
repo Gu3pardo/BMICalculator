@@ -1,4 +1,4 @@
-package guepardoapps.bmicalculator.controller;
+package guepardoapps.bmicalculator.views.controller;
 
 import java.util.ArrayList;
 
@@ -13,18 +13,18 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
+import android.view.KeyEvent;
 import android.widget.Button;
 import android.widget.ImageButton;
 
 import guepardoapps.bmicalculator.R;
-import guepardoapps.bmicalculator.common.Enables;
+import guepardoapps.bmicalculator.common.constants.Enables;
+import guepardoapps.bmicalculator.common.controller.DialogController;
+import guepardoapps.bmicalculator.common.controller.NavigationController;
 import guepardoapps.bmicalculator.common.dto.BMIDto;
+import guepardoapps.bmicalculator.common.tools.Logger;
 import guepardoapps.bmicalculator.views.AboutView;
-
 import guepardoapps.bmicalculator.views.InputView;
-import guepardoapps.library.toolset.common.Logger;
-import guepardoapps.library.toolset.controller.DialogController;
-import guepardoapps.library.toolset.controller.NavigationController;
 
 public class GraphViewController {
 
@@ -70,12 +70,12 @@ public class GraphViewController {
 
         _dialogController = new DialogController(
                 _context,
-                ContextCompat.getColor(_context, R.color.TextIcon),
-                ContextCompat.getColor(_context, R.color.Primary));
+                ContextCompat.getColor(_context, R.color.colorTextIcon),
+                ContextCompat.getColor(_context, R.color.colorPrimary));
 
         _navigationController = new NavigationController(_context);
 
-        ImageButton buttonDelete = (ImageButton) ((Activity) _context).findViewById(R.id.imageButtonDelete);
+        ImageButton buttonDelete = ((Activity) _context).findViewById(R.id.imageButtonDelete);
         buttonDelete.setOnClickListener(view ->
                 _dialogController.ShowDialogDouble(
                         "Clearing database?",
@@ -109,6 +109,12 @@ public class GraphViewController {
         _databaseController.Dispose();
     }
 
+    public void onKeyDown(int keyCode) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            _navigationController.NavigateTo(InputView.class, true);
+        }
+    }
+
     private LineGraphSeries<DataPoint> adjustLineGraphSeries(@NonNull ArrayList<BMIDto> bmiValues) {
         LineGraphSeries<DataPoint> bmiSeries = new LineGraphSeries<>();
 
@@ -132,7 +138,7 @@ public class GraphViewController {
     private void initializeGraph() {
         LineGraphSeries<DataPoint> bmiSeries = adjustLineGraphSeries(_bmiValues);
 
-        GraphView gravityGraph = (GraphView) ((Activity) _context).findViewById(R.id.bmiGraph);
+        GraphView gravityGraph = ((Activity) _context).findViewById(R.id.bmiGraph);
         gravityGraph.getViewport().setXAxisBoundsManual(true);
         gravityGraph.getViewport().setScrollableY(true);
         gravityGraph.getViewport().setMinX(bmiSeries.getLowestValueX() - BORDER_X);
@@ -146,7 +152,7 @@ public class GraphViewController {
     private void initializeNavigationButtons() {
         _logger.Debug("initializeNavigationButtons");
 
-        ImageButton imageButtonAdd = (ImageButton) ((Activity) _context).findViewById(R.id.imageButtonInput);
+        ImageButton imageButtonAdd = ((Activity) _context).findViewById(R.id.imageButtonInput);
         imageButtonAdd.setOnClickListener(view -> _navigationController.NavigateTo(InputView.class, true));
     }
 
@@ -162,7 +168,7 @@ public class GraphViewController {
             version = "Error loading version...";
         }
 
-        Button buttonVersionInformation = (Button) ((Activity) _context).findViewById(R.id.buttonVersionInformation);
+        Button buttonVersionInformation = ((Activity) _context).findViewById(R.id.buttonVersionInformation);
         buttonVersionInformation.setText(version);
         buttonVersionInformation.setOnClickListener(view -> _navigationController.NavigateTo(AboutView.class, true));
     }

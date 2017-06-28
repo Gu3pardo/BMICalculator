@@ -1,14 +1,13 @@
-package guepardoapps.bmicalculator.controller;
+package guepardoapps.bmicalculator.views.controller;
 
 import java.util.ArrayList;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import guepardoapps.library.toolset.common.Logger;
-
-import guepardoapps.bmicalculator.common.Enables;
+import guepardoapps.bmicalculator.common.constants.Enables;
 import guepardoapps.bmicalculator.common.dto.BMIDto;
+import guepardoapps.bmicalculator.common.tools.Logger;
 import guepardoapps.bmicalculator.database.Database;
 
 public class DatabaseController {

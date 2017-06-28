@@ -6,11 +6,9 @@ import android.view.KeyEvent;
 import android.view.View;
 
 import guepardoapps.bmicalculator.R;
-import guepardoapps.bmicalculator.common.Enables;
-import guepardoapps.bmicalculator.controller.AboutViewController;
-
-import guepardoapps.library.toolset.common.Logger;
-import guepardoapps.library.toolset.controller.NavigationController;
+import guepardoapps.bmicalculator.common.constants.Enables;
+import guepardoapps.bmicalculator.common.tools.Logger;
+import guepardoapps.bmicalculator.views.controller.AboutViewController;
 
 public class AboutView extends Activity {
 
@@ -18,7 +16,6 @@ public class AboutView extends Activity {
     private Logger _logger;
 
     private AboutViewController _aboutViewController;
-    private NavigationController _navigationController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +27,6 @@ public class AboutView extends Activity {
 
         _aboutViewController = new AboutViewController();
         _aboutViewController.onCreate(this);
-        _navigationController = new NavigationController(this);
     }
 
     @Override
@@ -57,12 +53,7 @@ public class AboutView extends Activity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         _logger.Debug(String.format("onKeyDown: keyCode: %s | event: %s", keyCode, event));
-
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            _navigationController.NavigateTo(InputView.class, true);
-            return true;
-        }
-
+        _aboutViewController.onKeyDown(keyCode);
         return super.onKeyDown(keyCode, event);
     }
 
