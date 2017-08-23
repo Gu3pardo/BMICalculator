@@ -14,7 +14,6 @@ import guepardoapps.bmicalculator.common.tools.Logger;
 import guepardoapps.bmicalculator.views.InputView;
 
 public class AboutViewController {
-
     private static final String TAG = AboutViewController.class.getSimpleName();
     private Logger _logger;
 

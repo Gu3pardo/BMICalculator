@@ -9,7 +9,6 @@ import guepardoapps.bmicalculator.common.tools.Logger;
 import guepardoapps.bmicalculator.views.controller.InputViewController;
 
 public class InputView extends Activity {
-
     private static final String TAG = InputView.class.getSimpleName();
     private Logger _logger;
 

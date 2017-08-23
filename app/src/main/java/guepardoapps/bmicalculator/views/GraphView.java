@@ -10,7 +10,6 @@ import guepardoapps.bmicalculator.common.tools.Logger;
 import guepardoapps.bmicalculator.views.controller.GraphViewController;
 
 public class GraphView extends Activity {
-
     private static final String TAG = GraphView.class.getSimpleName();
     private Logger _logger;
 

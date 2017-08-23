@@ -5,15 +5,13 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 <a target="_blank" href="https://www.paypal.me/GuepardoApps" title="Donate using PayPal"><img src="https://img.shields.io/badge/paypal-donate-blue.svg" /></a>
 
-[![Build](https://img.shields.io/badge/build-success-green.svg)](https://github.com/GuepardoApps/BMICalculator/blob/master/builds)
-[![Version](https://img.shields.io/badge/version-v1.0.0.170628-blue.svg)](https://github.com/GuepardoApps/BMICalculator/blob/master/builds)
+[![Build](https://img.shields.io/badge/build-success-green.svg)](https://github.com/GuepardoApps/BMICalculator/blob/master/release)
+[![Version](https://img.shields.io/badge/version-v1.1.0.170823-blue.svg)](https://github.com/GuepardoApps/BMICalculator/blob/master/release)
 
 Android application for calculating your bmi, saving it and displaying a graph of your progress
 
 # Screenshots
 
-![alt tag](https://github.com/GuepardoApps/BMICalculator/blob/master/screenshots/img_001.png)
+![alt tag](https://github.com/GuepardoApps/BMICalculator/blob/master/screenshots/header_001.png)
 ___________________________________
-![alt tag](https://github.com/GuepardoApps/BMICalculator/blob/master/screenshots/img_002.png)
-___________________________________
-![alt tag](https://github.com/GuepardoApps/BMICalculator/blob/master/screenshots/img_003.png)
+![alt tag](https://github.com/GuepardoApps/BMICalculator/blob/master/screenshots/header_002.png)

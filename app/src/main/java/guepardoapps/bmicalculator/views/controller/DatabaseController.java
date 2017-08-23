@@ -11,7 +11,6 @@ import guepardoapps.bmicalculator.common.tools.Logger;
 import guepardoapps.bmicalculator.database.Database;
 
 public class DatabaseController {
-
     private static final String TAG = DatabaseController.class.getSimpleName();
     private static Logger _logger;
 

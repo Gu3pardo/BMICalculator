@@ -1,6 +1,7 @@
 package guepardoapps.bmicalculator.views.controller;
 
 import android.content.Context;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 
 import guepardoapps.bmicalculator.common.constants.Enables;
@@ -9,7 +10,6 @@ import guepardoapps.bmicalculator.common.tools.Logger;
 import guepardoapps.bmicalculator.views.InputView;
 
 public class BootViewController {
-
     private static final String TAG = BootViewController.class.getSimpleName();
     private Logger _logger;
 
@@ -38,6 +38,6 @@ public class BootViewController {
 
     public void NavigateToInputView() {
         _logger.Debug("NavigateToInputView");
-        _navigationController.NavigateTo(InputView.class, true);
+        new Handler().postDelayed(() -> _navigationController.NavigateTo(InputView.class, true), 1500);
     }
 }

@@ -9,11 +9,12 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.rey.material.widget.Button;
+import com.rey.material.widget.FloatingActionButton;
 
 import es.dmoral.toasty.Toasty;
 
@@ -26,7 +27,6 @@ import guepardoapps.bmicalculator.views.AboutView;
 import guepardoapps.bmicalculator.views.GraphView;
 
 public class InputViewController {
-
     private static final String TAG = InputViewController.class.getSimpleName();
     private Logger _logger;
 
@@ -40,8 +40,8 @@ public class InputViewController {
     private TextView _resultTextView;
     private TextView _resultDescriptionTextView;
 
-    private ImageButton _buttonSave;
-    private ImageButton _buttonShare;
+    private FloatingActionButton _buttonSave;
+    private FloatingActionButton _buttonShare;
 
     public InputViewController() {
         _logger = new Logger(TAG, Enables.LOGGING);
@@ -167,7 +167,7 @@ public class InputViewController {
     private void initializeNavigationButtons() {
         _logger.Debug("initializeNavigationButtons");
 
-        ImageButton buttonGraph = ((Activity) _context).findViewById(R.id.imageButtonGraph);
+        FloatingActionButton buttonGraph = ((Activity) _context).findViewById(R.id.imageButtonGraph);
         buttonGraph.setOnClickListener(view -> _navigationController.NavigateTo(GraphView.class, true));
     }
 

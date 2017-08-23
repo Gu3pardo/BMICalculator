@@ -9,7 +9,6 @@ import guepardoapps.bmicalculator.common.tools.Logger;
 import guepardoapps.bmicalculator.views.controller.BootViewController;
 
 public class BootView extends Activity {
-
     private static final String TAG = BootView.class.getSimpleName();
     private Logger _logger;
 

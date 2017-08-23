@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+import com.rey.material.widget.Button;
+import com.rey.material.widget.FloatingActionButton;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,8 +16,6 @@ import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.view.KeyEvent;
-import android.widget.Button;
-import android.widget.ImageButton;
 
 import guepardoapps.bmicalculator.R;
 import guepardoapps.bmicalculator.common.constants.Enables;
@@ -27,7 +27,6 @@ import guepardoapps.bmicalculator.views.AboutView;
 import guepardoapps.bmicalculator.views.InputView;
 
 public class GraphViewController {
-
     private static final String TAG = GraphViewController.class.getSimpleName();
     private Logger _logger;
 
@@ -67,15 +66,10 @@ public class GraphViewController {
         _context = context;
 
         _databaseController = new DatabaseController(_context);
-
-        _dialogController = new DialogController(
-                _context,
-                ContextCompat.getColor(_context, R.color.colorTextIcon),
-                ContextCompat.getColor(_context, R.color.colorPrimary));
-
+        _dialogController = new DialogController(_context);
         _navigationController = new NavigationController(_context);
 
-        ImageButton buttonDelete = ((Activity) _context).findViewById(R.id.imageButtonDelete);
+        FloatingActionButton buttonDelete = ((Activity) _context).findViewById(R.id.imageButtonDelete);
         buttonDelete.setOnClickListener(view ->
                 _dialogController.ShowDialogDouble(
                         "Clearing database?",
@@ -129,7 +123,7 @@ public class GraphViewController {
         }
 
         bmiSeries.setDrawDataPoints(true);
-        bmiSeries.setColor(Color.WHITE);
+        bmiSeries.setColor(ContextCompat.getColor(_context, R.color.colorAccent));
         _logger.Debug(String.format("bmiSeries is %s for _gravityGraph!", bmiSeries));
 
         return bmiSeries;
@@ -152,7 +146,7 @@ public class GraphViewController {
     private void initializeNavigationButtons() {
         _logger.Debug("initializeNavigationButtons");
 
-        ImageButton imageButtonAdd = ((Activity) _context).findViewById(R.id.imageButtonInput);
+        FloatingActionButton imageButtonAdd = ((Activity) _context).findViewById(R.id.imageButtonInput);
         imageButtonAdd.setOnClickListener(view -> _navigationController.NavigateTo(InputView.class, true));
     }
 

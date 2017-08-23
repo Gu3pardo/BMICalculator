@@ -11,7 +11,6 @@ import guepardoapps.bmicalculator.common.tools.Logger;
 import guepardoapps.bmicalculator.views.controller.AboutViewController;
 
 public class AboutView extends Activity {
-
     private static final String TAG = AboutView.class.getSimpleName();
     private Logger _logger;
 
