@@ -1,0 +1,3 @@
+[X] switch to Kotlin
+[X] update libs and dependencies
+[ ] ...

@@ -1,19 +1,22 @@
 apply plugin: 'com.android.application'
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-android-extensions"
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "guepardoapps.bmicalculator"
-        minSdkVersion 21
-        targetSdkVersion 26
-        versionCode 10100
-        versionName "1.1.0.170823"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode 20000
+        versionName "2.0.0.181112"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
-        jackOptions {
-            enabled true
-        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     buildTypes {
         release {
@@ -24,34 +27,33 @@ android {
     aaptOptions {
         cruncherEnabled = false
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
 }
 
 repositories {
+    google()
     jcenter()
+    mavenCentral()
     maven { url "https://jitpack.io" }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:multidex:1.0.1'
-    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
-    compile 'com.android.support:cardview-v7:26.0.0-alpha1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:design:26.0.0-alpha1'
-    compile 'com.android.support:percent:26.0.0-alpha1'
-    compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
-    compile 'com.android.support:support-annotations:26.0.0-alpha1'
-    compile 'com.android.support:support-compat:26.0.0-alpha1'
-    compile 'com.android.support:support-v4:26.0.0-alpha1'
-    compile 'com.github.GrenderG:Toasty:1.2.5'
-    compile 'com.github.rey5137:material:1.2.4'
-    compile 'com.jjoe64:graphview:4.2.1'
-    testCompile 'junit:junit:4.12'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation "androidx.multidex:multidex:$multi_dex_version"
+    implementation "com.github.daniel-stoneuk:material-about-library:$materialabout_version"
+    implementation "com.github.rey5137:material:$rey_material_version"
+    implementation "com.github.TimeXt.TimeXt-Kotlin:timext-android:$timext_version"
+    implementation "com.github.GrenderG:Toasty:$toasty_version"
+    implementation "com.jjoe64:graphview:$graphview_version"
+    implementation "io.reactivex.rxjava2:rxkotlin:$reactivex_version"
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.percentlayout:percentlayout:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.annotation:annotation:1.0.0'
+    implementation 'androidx.core:core:1.1.0-alpha01'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0-alpha01'
 }
