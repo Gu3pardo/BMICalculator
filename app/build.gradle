@@ -9,8 +9,8 @@ android {
         applicationId "guepardoapps.bmicalculator"
         minSdkVersion 17
         targetSdkVersion 28
-        versionCode 20000
-        versionName "2.0.0.181112"
+        versionCode 20001
+        versionName "2.0.1.181129"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
