@@ -36,9 +36,7 @@ class BmiService(private val context: Context) : IBmiService {
         return result
     }
 
-    override fun clearDb() {
-        getList().forEach { entry -> deleteEntry(entry) }
-    }
+    override fun clearDb() = getList().forEach { entry -> deleteEntry(entry) }
 
     override fun calculateBmi(weight: Double, height: Double): Pair<BmiContainer, BmiLevel> {
         val value = weight / (height * height)

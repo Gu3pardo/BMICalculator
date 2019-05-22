@@ -36,33 +36,10 @@ class ActivityInput : Activity() {
         setupButtons()
     }
 
-    private fun setupButtons() {
-        buttonCalculate.setOnClickListener {
-            calculateBmi()
-        }
-
-        imageButtonGraph.setOnClickListener {
-            NavigationController(this).navigate(ActivityGraph::class.java, true)
-        }
-
-        imageButtonShare.setOnClickListener {
-            if (lastResult != null) {
-                val sendIntent = Intent()
-                sendIntent.action = Intent.ACTION_SEND
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "${getString(R.string.bmiMailTextPrefix)} ${lastResult!!.first.value.doubleFormat(resources.getInteger(R.integer.decimalFormat))}\n")
-                sendIntent.type = "text/plain"
-                startActivity(sendIntent)
-            }
-        }
-
-        imageButtonAbout.setOnClickListener {
-            NavigationController(this).navigate(ActivityAbout::class.java, false)
-        }
-    }
-
     private fun calculateBmi() {
         val weightString = inputFieldWeight.text.toString()
         val heightString = inputFieldHeight.text.toString()
+
         if (weightString.isEmpty() || heightString.isEmpty()) {
             Toasty.error(this, getString(R.string.calculateBmiMissingFieldsHint), Toast.LENGTH_LONG).show()
             return
@@ -94,5 +71,29 @@ class ActivityInput : Activity() {
         bmiResult.text = lastResult!!.first.value.doubleFormat(resources.getInteger(R.integer.decimalFormat))
         bmiResult.setBackgroundColor(lastResult!!.second.backgroundColor.toInt())
         bmiResultDescription.text = lastResult!!.second.description
+    }
+
+    private fun setupButtons() {
+        buttonCalculate.setOnClickListener {
+            calculateBmi()
+        }
+
+        imageButtonGraph.setOnClickListener {
+            NavigationController(this).navigate(ActivityGraph::class.java, true)
+        }
+
+        imageButtonShare.setOnClickListener {
+            if (lastResult != null) {
+                val sendIntent = Intent()
+                sendIntent.action = Intent.ACTION_SEND
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "${getString(R.string.bmiMailTextPrefix)} ${lastResult!!.first.value.doubleFormat(resources.getInteger(R.integer.decimalFormat))}\n")
+                sendIntent.type = "text/plain"
+                startActivity(sendIntent)
+            }
+        }
+
+        imageButtonAbout.setOnClickListener {
+            NavigationController(this).navigate(ActivityAbout::class.java, false)
+        }
     }
 }

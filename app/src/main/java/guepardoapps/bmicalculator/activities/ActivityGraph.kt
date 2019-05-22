@@ -42,6 +42,24 @@ class ActivityGraph : Activity() {
         return super.onKeyDown(keyCode, event)
     }
 
+    private fun adjustLineGraphSeries(): LineGraphSeries<DataPoint> {
+        val bmiSeries = LineGraphSeries<DataPoint>()
+        bmiService.getList().forEach { value -> bmiSeries.appendData(DataPoint(value.date, value.value), true, maxDataPoints) }
+        bmiSeries.isDrawDataPoints = true
+        bmiSeries.color = ContextCompat.getColor(this, R.color.colorAccent)
+        return bmiSeries
+    }
+
+    private fun checkPermission(): Boolean =
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,
+                        arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                        requestCodePermissionWriteExternalStorage)
+                false
+            } else {
+                true
+            }
+
     private fun setupButtons() {
         imageButtonDelete.setOnClickListener {
             DialogController(this).showDialogDouble(
@@ -82,25 +100,6 @@ class ActivityGraph : Activity() {
         bmiGraph.viewport.setMinY(bmiSeries.lowestValueY - borderY)
         bmiGraph.viewport.setMaxY(bmiSeries.highestValueY + borderY)
         bmiGraph.addSeries(bmiSeries)
-    }
-
-    private fun adjustLineGraphSeries(): LineGraphSeries<DataPoint> {
-        val bmiSeries = LineGraphSeries<DataPoint>()
-        bmiService.getList().forEach { value -> bmiSeries.appendData(DataPoint(value.date, value.value), true, maxDataPoints) }
-        bmiSeries.isDrawDataPoints = true
-        bmiSeries.color = ContextCompat.getColor(this, R.color.colorAccent)
-        return bmiSeries
-    }
-
-    private fun checkPermission(): Boolean {
-        return if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                    arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                    requestCodePermissionWriteExternalStorage)
-            false
-        } else {
-            true
-        }
     }
 
     companion object {
