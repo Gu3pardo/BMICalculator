@@ -14,7 +14,7 @@
 Android application for calculating your BMI, saving it and displaying it in a graph.
 You can also share your graph with others.
 
-# Screenshots
+## Screenshots
 
 ![alt tag](./screenshots/header_001.png)
 
