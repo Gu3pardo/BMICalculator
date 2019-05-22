@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">BMI Rechner</string>
+    <string name="copyright">©2018 &#8211; 2019 GuepardoApps (Jonas Schubert)</string>
+
+    <string name="about">Über</string>
+    <string name="author_title">Autor</string>
+    <string name="author">Jonas Schubert\nGuepardoApps</string>
+    <string name="version_title">Version</string>
+    <string name="version">2.0.2.190522</string>
+    <string name="email_title">E-Mail</string>
+    <string name="email">guepardoapps@gmail.com</string>
+    <string name="gitHubLink_title">GitHub</string>
+    <string name="gitHubLink">https://github.com/GuepardoApps-Releases/BMICalculator/</string>
+    <string name="homepageLink_title">Homepage</string>
+    <string name="homepageLink">https://guepardoapps.github.io/</string>
+
+    <string name="contentDescription">Dies ist ein Bild</string>
+
+    <string name="enterWeight">Bitte gebe dein Gewicht in kg ein</string>
+    <string name="enterHeight">Bitte gebe deine Größe in cm ein</string>
+
+    <string name="calculate">Berechne</string>
+
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+
+    <string name="clearingDatabaseTitle">Datenbank löschen</string>
+    <string name="clearingDatabasePrompt">Möchtest du wirklich alle Einträge löschen?</string>
+
+    <string name="snapshotFileName">BMI Graph</string>
+    <string name="snapshotTitle">Mein BMI Graph</string>
+    <string name="snapshotFailed">Konnte kein Bild erstellen!</string>
+
+    <string name="bmiMailTextPrefix">Mein letzter BMI:</string>
+
+    <string name="calculateBmiMissingFieldsHint">Bitte stelle alle benötigten Felder bereit!</string>
+    <string name="calculateBmiInvalidNumberHint">Bitte gebe valide Zahlen ein!</string>
+    <string name="calculateBmiInvalidWeightHint">Bitte gebe ein valides Gewicht ein!</string>
+    <string name="calculateBmiInvalidHeightHint">Bitte gebe eine valide Größe ein!</string>
+
+    <string name="mediaStorageExceptionMessage">"Konnte Pfad zum MediaStore nicht lesen. Bitte Berechtigungen prüfen."</string>
+</resources>

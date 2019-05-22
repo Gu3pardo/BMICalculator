@@ -18,7 +18,7 @@ enum class BmiLevel(val id: Int, @NonNull val text: String, @NonNull val descrip
 
     companion object {
         fun getByLevel(level: Double): BmiLevel {
-            for (entry in BmiLevel.values()) {
+            for (entry in values()) {
                 if (level > entry.lowerLevel && level < entry.upperLevel) {
                     return entry
                 }

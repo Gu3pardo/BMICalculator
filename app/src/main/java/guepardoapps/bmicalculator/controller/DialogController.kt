@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import guepardoapps.bmicalculator.R
 
-internal class DialogController(val context: Context) : IDialogController {
+internal class DialogController(private val context: Context) : IDialogController {
     override fun showDialogDouble(title: String, prompt: String, ok: String, cancel: String, isCancelable: Boolean, okCallback: () -> Unit, cancelCallback: (() -> Unit)?) {
         val dialog = Dialog(context)
 

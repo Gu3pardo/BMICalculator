@@ -28,7 +28,7 @@ class ActivityInput : Activity() {
         if (lastSaveResult != null) {
             lastResult = Pair(lastSaveResult, BmiLevel.getByLevel(lastSaveResult.value))
 
-            bmiResult.text = lastResult!!.first.value.doubleFormat(2)
+            bmiResult.text = lastResult!!.first.value.doubleFormat(resources.getInteger(R.integer.decimalFormat))
             bmiResult.setBackgroundColor(lastResult!!.second.backgroundColor.toInt())
             bmiResultDescription.text = lastResult!!.second.description
         }
@@ -49,7 +49,7 @@ class ActivityInput : Activity() {
             if (lastResult != null) {
                 val sendIntent = Intent()
                 sendIntent.action = Intent.ACTION_SEND
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "My last BMI: ${lastResult!!.first.value.doubleFormat(2)}\n")
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "${getString(R.string.bmiMailTextPrefix)} ${lastResult!!.first.value.doubleFormat(resources.getInteger(R.integer.decimalFormat))}\n")
                 sendIntent.type = "text/plain"
                 startActivity(sendIntent)
             }
@@ -64,7 +64,7 @@ class ActivityInput : Activity() {
         val weightString = inputFieldWeight.text.toString()
         val heightString = inputFieldHeight.text.toString()
         if (weightString.isEmpty() || heightString.isEmpty()) {
-            Toasty.error(this, "Please provide all needed fields!", Toast.LENGTH_LONG).show()
+            Toasty.error(this, getString(R.string.calculateBmiMissingFieldsHint), Toast.LENGTH_LONG).show()
             return
         }
 
@@ -73,25 +73,25 @@ class ActivityInput : Activity() {
 
         try {
             weight = weightString.toDouble()
-            height = heightString.toDouble() / 100
+            height = heightString.toDouble() / resources.getInteger(R.integer.meterDivider)
         } catch (exception: Exception) {
-            Toasty.error(this, "Please provide valid numbers!", Toast.LENGTH_LONG).show()
+            Toasty.error(this, getString(R.string.calculateBmiInvalidNumberHint), Toast.LENGTH_LONG).show()
             return
         }
 
-        if (weight !in 0..1000) {
-            Toasty.error(this, "Please enter a valid weight!", Toast.LENGTH_LONG).show()
+        if (weight !in resources.getInteger(R.integer.minWeight)..resources.getInteger(R.integer.maxWeight)) {
+            Toasty.error(this, getString(R.string.calculateBmiInvalidWeightHint), Toast.LENGTH_LONG).show()
             return
         }
 
-        if (height <= 0 || height >= 3) {
-            Toasty.error(this, "Please enter a valid weight!", Toast.LENGTH_LONG).show()
+        if (height !in resources.getInteger(R.integer.minHeight)..resources.getInteger(R.integer.maxHeight)) {
+            Toasty.error(this, getString(R.string.calculateBmiInvalidHeightHint), Toast.LENGTH_LONG).show()
             return
         }
 
         lastResult = bmiService.calculateBmi(weight, height)
 
-        bmiResult.text = lastResult!!.first.value.doubleFormat(2)
+        bmiResult.text = lastResult!!.first.value.doubleFormat(resources.getInteger(R.integer.decimalFormat))
         bmiResult.setBackgroundColor(lastResult!!.second.backgroundColor.toInt())
         bmiResultDescription.text = lastResult!!.second.description
     }

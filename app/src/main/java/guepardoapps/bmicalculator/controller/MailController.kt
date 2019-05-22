@@ -3,7 +3,7 @@ package guepardoapps.bmicalculator.controller
 import android.content.Context
 import android.content.Intent
 
-internal class MailController(val context: Context) : IMailController {
+internal class MailController(private val context: Context) : IMailController {
     override fun sendMail(subject: String, text: String, addresses: ArrayList<String>, startNewActivity: Boolean) {
         val mailIntent = Intent(Intent.ACTION_SEND)
 

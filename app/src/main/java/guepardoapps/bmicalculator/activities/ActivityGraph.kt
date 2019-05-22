@@ -45,10 +45,10 @@ class ActivityGraph : Activity() {
     private fun setupButtons() {
         imageButtonDelete.setOnClickListener {
             DialogController(this).showDialogDouble(
-                    "Clearing database?",
-                    "Do you really want to delete all entries?",
-                    "Yes",
-                    "No",
+                    getString(R.string.clearingDatabaseTitle),
+                    getString(R.string.clearingDatabasePrompt),
+                    getString(R.string.yes),
+                    getString(R.string.no),
                     true,
                     {
                         bmiService.clearDb()
@@ -60,10 +60,10 @@ class ActivityGraph : Activity() {
         imageButtonShare.setOnClickListener {
             if (checkPermission()) {
                 try {
-                    (bmiGraph as GraphView).takeSnapshotAndShare(this, "Bmi graph", "My bmi graph")
+                    (bmiGraph as GraphView).takeSnapshotAndShare(this, getString(R.string.snapshotFileName), getString(R.string.snapshotTitle))
                 } catch (exception: Exception) {
                     Log.e(ActivityGraph::class.java.simpleName, exception.message)
-                    Toasty.error(this, "Could not take snapshot!", Toast.LENGTH_LONG).show()
+                    Toasty.error(this, getString(R.string.snapshotFailed), Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -77,16 +77,16 @@ class ActivityGraph : Activity() {
         val bmiSeries = adjustLineGraphSeries()
         bmiGraph.viewport.isXAxisBoundsManual = true
         bmiGraph.viewport.setScrollableY(true)
-        bmiGraph.viewport.setMinX(bmiSeries.lowestValueX - ActivityGraph.borderX)
-        bmiGraph.viewport.setMaxX(bmiSeries.highestValueX + ActivityGraph.borderX)
-        bmiGraph.viewport.setMinY(bmiSeries.lowestValueY - ActivityGraph.borderY)
-        bmiGraph.viewport.setMaxY(bmiSeries.highestValueY + ActivityGraph.borderY)
+        bmiGraph.viewport.setMinX(bmiSeries.lowestValueX - borderX)
+        bmiGraph.viewport.setMaxX(bmiSeries.highestValueX + borderX)
+        bmiGraph.viewport.setMinY(bmiSeries.lowestValueY - borderY)
+        bmiGraph.viewport.setMaxY(bmiSeries.highestValueY + borderY)
         bmiGraph.addSeries(bmiSeries)
     }
 
     private fun adjustLineGraphSeries(): LineGraphSeries<DataPoint> {
         val bmiSeries = LineGraphSeries<DataPoint>()
-        bmiService.getList().forEach { value -> bmiSeries.appendData(DataPoint(value.date, value.value), true, ActivityGraph.maxDataPoints) }
+        bmiService.getList().forEach { value -> bmiSeries.appendData(DataPoint(value.date, value.value), true, maxDataPoints) }
         bmiSeries.isDrawDataPoints = true
         bmiSeries.color = ContextCompat.getColor(this, R.color.colorAccent)
         return bmiSeries
@@ -96,7 +96,7 @@ class ActivityGraph : Activity() {
         return if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,
                     arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                    ActivityGraph.requestCodePermissionWriteExternalStorage)
+                    requestCodePermissionWriteExternalStorage)
             false
         } else {
             true

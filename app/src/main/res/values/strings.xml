@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">BMI Calculator</string>
-    <string name="copyright">©2018 GuepardoApps (Jonas Schubert)</string>
+    <string name="copyright">©2018 &#8211; 2019 GuepardoApps (Jonas Schubert)</string>
 
     <string name="about">About</string>
     <string name="author_title">Author</string>
     <string name="author">Jonas Schubert\nGuepardoApps</string>
     <string name="version_title">Version</string>
-    <string name="version">2.0.1.181129</string>
-    <string name="email_title">EMail</string>
+    <string name="version">2.0.2.190522</string>
+    <string name="email_title">E-Mail</string>
     <string name="email">guepardoapps@gmail.com</string>
     <string name="gitHubLink_title">GitHub</string>
-    <string name="gitHubLink">https://github.com/GuepardoApps/BMICalculator/</string>
+    <string name="gitHubLink">https://github.com/GuepardoApps-Releases/BMICalculator/</string>
     <string name="homepageLink_title">Homepage</string>
     <string name="homepageLink">https://guepardoapps.github.io/</string>
 
@@ -20,4 +20,23 @@
     <string name="enterHeight">Enter your height in cm</string>
 
     <string name="calculate">Calculate</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="clearingDatabaseTitle">Clearing Database</string>
+    <string name="clearingDatabasePrompt">Do you really want to delete all entries?</string>
+
+    <string name="snapshotFileName">BMI graph</string>
+    <string name="snapshotTitle">My BMI graph</string>
+    <string name="snapshotFailed">Could not take snapshot!</string>
+
+    <string name="bmiMailTextPrefix">My last BMI:</string>
+
+    <string name="calculateBmiMissingFieldsHint">Please provide all needed fields!</string>
+    <string name="calculateBmiInvalidNumberHint">Please provide valid numbers!</string>
+    <string name="calculateBmiInvalidWeightHint">Please enter a valid weight!</string>
+    <string name="calculateBmiInvalidHeightHint">Please enter a valid height!</string>
+
+    <string name="mediaStorageExceptionMessage">"Could not get path from MediaStore. Please check permissions."</string>
 </resources>

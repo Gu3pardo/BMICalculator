@@ -1,0 +1,10 @@
+<resources>
+    <integer name="decimalFormat">2</integer>
+
+    <integer name="minWeight">0</integer>
+    <integer name="maxWeight">1000</integer>
+
+    <integer name="minHeight">0</integer>
+    <integer name="maxHeight">3</integer>
+    <integer name="meterDivider">100</integer>
+</resources>

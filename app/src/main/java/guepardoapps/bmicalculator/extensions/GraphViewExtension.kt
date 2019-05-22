@@ -7,6 +7,7 @@ import com.jjoe64.graphview.GraphView
 import android.content.Intent
 import android.net.Uri
 import android.provider.MediaStore
+import guepardoapps.bmicalculator.R
 import java.io.ByteArrayOutputStream
 
 fun GraphView.takeSnapshot(): Bitmap {
@@ -22,7 +23,7 @@ fun GraphView.takeSnapshotAndShare(context: Context, imageName: String, title: S
     image.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
 
     val path = MediaStore.Images.Media.insertImage(context.contentResolver, image, imageName, null)
-            ?: throw SecurityException("Could not get path from MediaStore. Please check permissions.")
+            ?: throw SecurityException(context.getString(R.string.mediaStorageExceptionMessage))
 
     val intent = Intent(Intent.ACTION_SEND)
     intent.type = "image/*"
