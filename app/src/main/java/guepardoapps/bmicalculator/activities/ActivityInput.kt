@@ -1,8 +1,8 @@
 package guepardoapps.bmicalculator.activities
 
 import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
+import android.view.KeyEvent
 import android.widget.Toast
 import es.dmoral.toasty.Toasty
 import guepardoapps.bmicalculator.R
@@ -16,24 +16,30 @@ import java.lang.Exception
 
 class ActivityInput : Activity() {
 
-    private lateinit var bmiService: BmiService
+    private val bmiService: BmiService = BmiService(this)
+
     private var lastResult: Pair<BmiContainer, BmiLevel>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.side_input)
 
-        bmiService = BmiService(this)
         val lastSaveResult = bmiService.getList().lastOrNull()
         if (lastSaveResult != null) {
             lastResult = Pair(lastSaveResult, BmiLevel.getByLevel(lastSaveResult.value))
-
             bmiResult.text = lastResult!!.first.value.doubleFormat(resources.getInteger(R.integer.decimalFormat))
             bmiResult.setBackgroundColor(lastResult!!.second.backgroundColor.toInt())
             bmiResultDescription.text = lastResult!!.second.description
         }
 
         setupButtons()
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        when (keyCode) {
+            KeyEvent.KEYCODE_BACK -> NavigationController(this).navigate(ActivityGraph::class.java, true)
+        }
+        return super.onKeyDown(keyCode, event)
     }
 
     private fun calculateBmi() {
@@ -56,12 +62,12 @@ class ActivityInput : Activity() {
             return
         }
 
-        if (weight !in resources.getInteger(R.integer.minWeight)..resources.getInteger(R.integer.maxWeight)) {
+        if (weight !in resources.getInteger(R.integer.minWeight).toDouble()..resources.getInteger(R.integer.maxWeight).toDouble()) {
             Toasty.error(this, getString(R.string.calculateBmiInvalidWeightHint), Toast.LENGTH_LONG).show()
             return
         }
 
-        if (height !in resources.getInteger(R.integer.minHeight)..resources.getInteger(R.integer.maxHeight)) {
+        if (height !in resources.getInteger(R.integer.minHeight).toDouble()..resources.getInteger(R.integer.maxHeight).toDouble()) {
             Toasty.error(this, getString(R.string.calculateBmiInvalidHeightHint), Toast.LENGTH_LONG).show()
             return
         }
@@ -76,24 +82,6 @@ class ActivityInput : Activity() {
     private fun setupButtons() {
         buttonCalculate.setOnClickListener {
             calculateBmi()
-        }
-
-        imageButtonGraph.setOnClickListener {
-            NavigationController(this).navigate(ActivityGraph::class.java, true)
-        }
-
-        imageButtonShare.setOnClickListener {
-            if (lastResult != null) {
-                val sendIntent = Intent()
-                sendIntent.action = Intent.ACTION_SEND
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "${getString(R.string.bmiMailTextPrefix)} ${lastResult!!.first.value.doubleFormat(resources.getInteger(R.integer.decimalFormat))}\n")
-                sendIntent.type = "text/plain"
-                startActivity(sendIntent)
-            }
-        }
-
-        imageButtonAbout.setOnClickListener {
-            NavigationController(this).navigate(ActivityAbout::class.java, false)
         }
     }
 }

@@ -12,6 +12,6 @@ class ActivityBoot : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.side_boot)
-        Handler().postDelayed({ NavigationController(this).navigate(ActivityInput::class.java, true) }, 1.seconds)
+        Handler().postDelayed({ NavigationController(this).navigate(ActivityGraph::class.java, true) }, 1.seconds)
     }
 }

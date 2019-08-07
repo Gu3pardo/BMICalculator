@@ -23,6 +23,9 @@
 
     <string name="yes">Ja</string>
     <string name="no">Nein</string>
+    <string name="example">Beispiel</string>
+    <string name="delete">Löschen</string>
+    <string name="deleteRequest">Möchtest du den Eintrag %s löschen?</string>
 
     <string name="clearingDatabaseTitle">Datenbank löschen</string>
     <string name="clearingDatabasePrompt">Möchtest du wirklich alle Einträge löschen?</string>

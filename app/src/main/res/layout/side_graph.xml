@@ -29,6 +29,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dip"
                     android:layout_margin="5dp" />
+
+                <ListView
+                    android:id="@+id/listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/bmiGraph" />
             </RelativeLayout>
 
             <LinearLayout
@@ -40,6 +46,20 @@
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:padding="5dp">
+
+                <com.rey.material.widget.FloatingActionButton
+                    android:id="@+id/imageButtonAdd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:contentDescription="@string/contentDescription"
+                    app:fab_iconSize="30dp"
+                    app:fab_iconSrc="@android:drawable/ic_menu_add"
+                    app:fab_radius="17dp"
+                    app:rd_delayClick="none"
+                    app:rd_enable="true"
+                    app:rd_rippleColor="@color/colorPrimary"
+                    app:rd_rippleType="touch" />
 
                 <com.rey.material.widget.FloatingActionButton
                     android:id="@+id/imageButtonDelete"
