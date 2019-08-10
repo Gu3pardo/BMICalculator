@@ -1,18 +1,20 @@
 <resources>
-    <string name="app_name" translatable="false">BMI Calculator</string>
+    <string name="app_name" translatable="false">My BMI</string>
     <string name="copyright" translatable="false">©2018 &#8211; 2019 GuepardoApps (Jonas Schubert)</string>
 
     <string name="about">About</string>
     <string name="author_title">Author</string>
     <string name="author" translatable="false">Jonas Schubert\nGuepardoApps</string>
     <string name="version_title">Version</string>
-    <string name="version" translatable="false">2.0.3.190807</string>
-    <string name="email_title">E-Mail</string>
+    <string name="version" translatable="false">2.0.4.190810</string>
+    <string name="email_title">Mail</string>
     <string name="email" translatable="false">guepardoapps@gmail.com</string>
-    <string name="gitHubLink_title">GitHub</string>
+    <string name="gitHubLink_title" translatable="false">GitHub</string>
     <string name="gitHubLink" translatable="false">https://github.com/GuepardoApps-Releases/BMICalculator/</string>
-    <string name="homepageLink_title">Homepage</string>
+    <string name="homepageLink_title" translatable="false">Homepage</string>
     <string name="homepageLink" translatable="false">https://guepardoapps.github.io/</string>
+    <string name="special_thanks_title" translatable="false">Special thanks</string>
+    <string name="special_thanks" translatable="false">I want to thank my lovely wife for always supporting me and helping me to improve this application! நான் உன்னை காதலிக்கிறேன்</string>
 
     <string name="contentDescription">This is an image</string>
 

@@ -4,7 +4,7 @@
 [![Paypal](https://img.shields.io/badge/paypal-donate-blue.svg)](https://www.paypal.me/GuepardoApps)
 
 [![Build](https://img.shields.io/badge/build-success-green.svg)](./release)
-[![Version](https://img.shields.io/badge/version-2.0.3.190807-blue.svg)](./release)
+[![Version](https://img.shields.io/badge/version-2.0.4.190810-blue.svg)](./release)
 [![API](https://img.shields.io/badge/API-17+-blue.svg)](https://android-arsenal.com/api?level=17)
 
 [![Platform](https://img.shields.io/badge/platform-Android-blue.svg)](https://www.android.com)
