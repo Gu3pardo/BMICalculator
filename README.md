@@ -4,7 +4,7 @@
 [![Paypal](https://img.shields.io/badge/paypal-donate-blue.svg)](https://www.paypal.me/GuepardoApps)
 
 [![Build](https://img.shields.io/badge/build-success-green.svg)](./release)
-[![Version](https://img.shields.io/badge/version-2.0.4.190810-blue.svg)](./release)
+[![Version](https://img.shields.io/badge/version-2.0.5.191109-blue.svg)](./release)
 [![API](https://img.shields.io/badge/API-17+-blue.svg)](https://android-arsenal.com/api?level=17)
 
 [![Platform](https://img.shields.io/badge/platform-Android-blue.svg)](https://www.android.com)
@@ -19,6 +19,12 @@ You can also share your graph with others.
 ![alt tag](./screenshots/header_001.png)
 
 ![alt tag](./screenshots/header_002.png)
+
+## Contributors
+
+| [<img alt="JonasSchubert" src="https://avatars0.githubusercontent.com/u/21952813?v=4&s=117" width="117"/>](https://github.com/JonasSchubert) |
+| :---------------------------------------------------------------------------------------------------------------------------------------: |
+| [Jonas Schubert](https://github.com/JonasSchubert) |
 
 ## License
 
